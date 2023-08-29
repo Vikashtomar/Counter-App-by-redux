@@ -1,9 +1,8 @@
- import React from 'react'
- 
- function CouterSlice() {
-   return (
-     <div>CouterSlice</div>
-   )
- }
- 
- export default CouterSlice
+ import { createSlice } from "@reduxjs/toolkit";
+
+const countersli = createSlice({
+  name: "counter",
+  initialState: {
+   counter,
+  },
+});
