@@ -7,11 +7,16 @@ function Counter() {
     let init = useSelector((state) => {
         return state.counter
     })
+    function add()
+    {
+      console.log(increment)
+    }
   return (
     <>
         <p>{init.counter}</p>
         <button onClick={() => dispatch(increment())}>Increment</button>
         <button onClick={() => dispatch(decrement())}>Decrement</button>
+        
     </>
   )
 }
