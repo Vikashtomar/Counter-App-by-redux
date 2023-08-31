@@ -1,24 +1,24 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { increment , decrement } from './CounterSlice';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { decerement, increment } from './reduxmaterial/counterSlice';
 
-function Counter() {
-    let dispatch = useDispatch();
-    let init = useSelector((state) => {
-        return state.counter
-    })
-    function add()
-    {
-      console.log(increment)
-    }
-  return (
-    <>
-        <p>{init.counter}</p>
-        <button onClick={() => dispatch(increment())}>Increment</button>
-        <button onClick={() => dispatch(decrement())}>Decrement</button>
-        
-    </>
-  )
+function App() {
+    const counter = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
+
+    return (
+        <div className='app'>
+            <button onClick={() => dispatch(increment())}>
+                increment..
+            </button>
+            <p>
+                {counter}
+            </p>
+            <button onClick={() => dispatch(decerement())}>
+                Decerement
+            </button>
+        </div>
+    );
 }
 
-export default Counter
+export default App;
